@@ -30,6 +30,34 @@ a {
     text-decoration: none;
 }
 
+.btn {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    transition: .3s ease-in-out;
+}
+
+.btn--dark {
+    color: var(--dark);
+    border: 1px solid var(--dark);
+}
+
+.btn--dark:hover {
+    color: var(--dark);
+    background-color: var(--light-color);
+}
+
+.btn--white:hover {
+    color: var(--dark);
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
 /* styling navigation */
 nav {
     /* background-color: #ccc; */
@@ -87,3 +115,49 @@ nav {
 }
 
 /* header styles */
+.box {
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    display: flex;
+    text-align: center;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.box:nth-child(1) {
+    background-color: var(--dark);
+    color: #fff;
+}
+
+.box:nth-child(even) .box-text {
+    order: 2;
+}
+
+.box h2 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    margin-bottom: 1rem;
+}
+
+.box p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.box-text, .box-slika {
+    flex: 1;
+}
+
+.box-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content {
+    padding: 2rem 4rem;
+
+}
+
+
