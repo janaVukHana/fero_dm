@@ -28,7 +28,7 @@ h3 {
 
 a {
     text-decoration: none;
-    display: block;
+    display: inline-block;
 }
 a.active {
     color: var(--main-color) !important;
@@ -120,7 +120,42 @@ nav {
     color: var(--main-color);
 }
 
-/* header styles */
+/* mobile menu icon styles */
+button.mobile-menu-icon {
+    display: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+button.mobile-menu-icon:hover .line {
+    background-color: var(--main-color);
+}
+
+.line {
+    height: 2px;
+    width: 30px;
+    margin-bottom: 5px;
+    background-color: var(--dark);
+    transition: .3s ease-in-out width;
+    margin-left: auto;
+}
+
+.line:last-child {
+    margin-bottom: 0;
+}
+
+/* mobili menu icon javascript */
+.top-line-animation {
+    width: 20px;
+}
+
+.middle-line-animation {
+    width: 25px;
+}
+
+/* main content styles */
 .box {
     line-height: 1.5;
     margin-bottom: 3rem;
@@ -203,6 +238,106 @@ footer {
     padding: 2rem;
     background-color: var(--light);
     color: var(--dark);
+}
+
+/* @ MEDIA */
+@media only screen and (max-width: 968px) { 
+    .logo {
+        /* border: 1px solid var(--dark); */
+        margin-right: 20px;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+    }
+
+
+    .logo a span {
+        font-size: 1.2rem;
+    }
+
+    .navbar-menu a {
+        font-size: 0.875rem;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        padding: 0.5rem .8rem;
+    }
+
+    .box {
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .box-content {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .box h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        margin-bottom: 1rem;
+    }
+    
+    .box p {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .box-slika {
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* navigation */
+    body {
+        margin-top: 77px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        justify-content: space-between;
+    }
+
+    .navbar-menu {
+        background-color: #fff;
+        /* display: none; */
+        flex-direction: column;
+        position: fixed;
+        width: 90%;
+        height: 100vh;
+        top: 77px;
+        left: 0;
+        z-index: 3;
+        transform: translateX(-100%);
+        transition: 1s ease-in-out transform;
+    }
+
+    .show-menu {
+        transform: translateX(0);
+    }
+
+    button.mobile-menu-icon {
+        display: block;
+    }
+
+    .box {
+        flex-direction: column;
+    }
+
+    .box-text {
+        order: 2;
+    }
+
+    .box-slika {
+        margin: 0;
+    }
 }
 
 
