@@ -28,8 +28,18 @@ h3 {
 
 a {
     text-decoration: none;
+    display: block;
+}
+a.active {
+    color: var(--main-color) !important;
 }
 
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* utility classes */
 .btn {
     color: #fff;
     padding: 0.5rem 1rem;
@@ -53,10 +63,6 @@ a {
     background-color: #fff;
 }
 
-img {
-    width: 100%;
-    vertical-align: middle;
-}
 
 /* styling navigation */
 nav {
@@ -157,7 +163,46 @@ nav {
 
 .box-content {
     padding: 2rem 4rem;
+}
 
+/* footer styles */
+footer {
+    border-top: 2px solid var(--dark);
+}
+
+.footer-links-container {
+    display: flex;
+}
+
+.footer-links {
+    padding: 2rem;
+}
+
+.footer h3 {
+    color: var(--dark);
+    font-size: 1.188rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--light-color);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--main-color);
+}
+
+.social-icon {
+    margin-right: 1.1rem;
+}
+
+.copy-rights {
+    padding: 2rem;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 
