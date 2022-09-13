@@ -63,8 +63,8 @@ img {
     background-color: #fff;
 }
 
-
-/* styling navigation */
+/* ////////////////////////////////////////////////////////////////////// */
+/* NAVIGATION */
 nav {
     /* background-color: #ccc; */
     padding: 0.8rem 1.5rem;
@@ -155,6 +155,9 @@ button.mobile-menu-icon:hover .line {
     width: 25px;
 }
 
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* HOME PAGE */
+
 /* main content styles */
 .box {
     line-height: 1.5;
@@ -199,8 +202,80 @@ button.mobile-menu-icon:hover .line {
 .box-content {
     padding: 2rem 4rem;
 }
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* KONTAKT PAGE */
+.contact h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 3rem;
+}
 
-/* footer styles */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.contact-info li {
+    padding: 0.5rem 1rem;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font-size: 1.3rem;
+    color: #fff;
+    background-color: var(--light-color);
+}
+
+.contact-info li:first-child {
+    border-top-left-radius: 30%;
+}
+
+.contact-info li:last-child {
+    border-bottom-right-radius: 30%;
+}
+
+.contact-info li a {
+    color: #fff;
+}
+
+.contact-info li:nth-child(2) {
+    background-color: var(--dark);
+}
+
+.contact-icon {
+    margin-right: 1rem;
+}
+
+.mapouter, .gmap_canvas, .mapouter iframe {
+    width: 600px;
+    height: 500px;
+}
+
+.mapouter {
+    position:relative;
+    text-align:right;
+    background-color: red;
+    margin-bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    
+}
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+/* FOOTER */
 footer {
     border-top: 2px solid var(--dark);
 }
@@ -287,6 +362,14 @@ footer {
     .box-slika {
         margin: auto;
     }
+
+    .contact-info {
+        padding: 2rem 2rem;
+    }
+
+    .contact-info li {
+        font-size: 1.188rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -300,6 +383,7 @@ footer {
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 2;
         width: 100%;
         background-color: #fff;
         justify-content: space-between;
@@ -338,6 +422,30 @@ footer {
     .box-slika {
         margin: 0;
     }
+
+    .contact-info {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+        padding: 2rem 0 1rem;
+        margin: 0;
+    }
+
+    .contact-info li {
+        width: 100%;
+        min-height: 55px;
+        justify-content: flex-start;
+        margin-bottom: 3px;
+    }
+
+    .mapouter, .gmap_canvas, .mapouter iframe {
+        width: 360px;
+        height: 300px;
+    }
+    
 }
 
 
