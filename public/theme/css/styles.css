@@ -243,12 +243,20 @@ main {
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* KONTAKT PAGE */
+.contact {
+     padding: 2rem 4rem;
+}
+
+.radno-vreme {
+    color: rgb(233, 12, 12);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
 
 .contact-info {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 4rem;
     text-align: center;
 }
 
@@ -467,6 +475,10 @@ footer {
     }
 
     /* contact page */
+    .contact {
+        padding: 1rem;
+    }
+
     .contact-info {
         flex-direction: column;
         padding: 2rem 1rem;
