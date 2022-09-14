@@ -295,7 +295,7 @@ main {
 /* google maps styles */
 .mapouter, .gmap_canvas, .mapouter iframe {
     width: 600px;
-    height: 500px;
+    height: 350px;
 }
 
 .mapouter {
