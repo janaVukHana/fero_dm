@@ -16,14 +16,19 @@ body {
     box-sizing: border-box;
 }
 
-/* body {
-    margin: 0 20px;
-} */
-
 h1,
 h2,
 h3 {
   line-height: 1.2;
+}
+
+h2 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--dark);
 }
 
 a {
@@ -70,13 +75,11 @@ nav {
     padding: 0.8rem 1.5rem;
     border-bottom: 2px solid var(--dark);
     box-shadow: 2px 2px 4px var(--dark);
-    margin-bottom: 3rem;
     display: flex;
     align-items: center;
 }
 
 .logo {
-    /* border: 1px solid var(--dark); */
     margin-right: 50px;
 }
 
@@ -100,7 +103,6 @@ nav {
 }
 
 .navbar-menu {
-    /* border: 1px solid green; */
     display: flex;
 }
 
@@ -156,6 +158,9 @@ button.mobile-menu-icon:hover .line {
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// */
+main {
+    padding: 3rem 0;
+}
 /* HOME PAGE */
 
 /* main content styles */
@@ -177,11 +182,8 @@ button.mobile-menu-icon:hover .line {
     order: 2;
 }
 
-.box h2 {
-    font-size: 3.125rem;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    margin-bottom: 1rem;
+.box:first-child h2 {
+    color: #fff;
 }
 
 .box p {
@@ -202,16 +204,45 @@ button.mobile-menu-icon:hover .line {
 .box-content {
     padding: 2rem 4rem;
 }
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ACTION PAGE */
+.action-container {
+    background-color: var(--dark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.action-container article {
+    width: 25%;
+    padding: .5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.1rem;
+    color: red;
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+}
+
+.desc {
+    color: var(--light-color);
+    padding: 0 1rem 1rem;
+}
+
+.price, .desc {
+    background-color: #fff;
+}
+
+
+
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* KONTAKT PAGE */
-.contact h2 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark);
-    margin-bottom: 3rem;
-}
 
 .contact-info {
     display: flex;
@@ -253,6 +284,7 @@ button.mobile-menu-icon:hover .line {
     margin-right: 1rem;
 }
 
+/* google maps styles */
 .mapouter, .gmap_canvas, .mapouter iframe {
     width: 600px;
     height: 500px;
@@ -261,12 +293,10 @@ button.mobile-menu-icon:hover .line {
 .mapouter {
     position:relative;
     text-align:right;
-    background-color: red;
     margin-bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 0;
-    
+    z-index: 0; 
 }
 
 .gmap_canvas {
@@ -317,15 +347,21 @@ footer {
 
 /* @ MEDIA */
 @media only screen and (max-width: 968px) { 
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        margin-bottom: 1rem;
+    }
+
+    /* header style */
     .logo {
-        /* border: 1px solid var(--dark); */
         margin-right: 20px;
     }
 
     .logo a {
         font-size: 1.5rem;
     }
-
 
     .logo a span {
         font-size: 1.2rem;
@@ -338,6 +374,7 @@ footer {
         padding: 0.5rem .8rem;
     }
 
+    /* home page */
     .box {
         line-height: 1.5;
         margin-bottom: 1.5rem;
@@ -347,12 +384,6 @@ footer {
         padding: 1.5rem 1.5rem;
     }
 
-    .box h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        letter-spacing: 1.4px;
-        margin-bottom: 1rem;
-    }
     
     .box p {
         font-size: 1.3rem;
@@ -363,6 +394,7 @@ footer {
         margin: auto;
     }
 
+    /* contact page */
     .contact-info {
         padding: 2rem 2rem;
     }
@@ -373,12 +405,17 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+        padding: 2rem 0 1rem;
+        margin: 0;
+    }
 
-    /* navigation */
     body {
         margin-top: 77px;
     }
-
+    
+    /* navigation */
     nav {
         position: fixed;
         top: 0;
@@ -410,7 +447,8 @@ footer {
     button.mobile-menu-icon {
         display: block;
     }
-
+    
+    /* home page */
     .box {
         flex-direction: column;
     }
@@ -423,15 +461,15 @@ footer {
         margin: 0;
     }
 
+    /* action page */
+    .action-container article {
+        width: 50%;
+    }
+
+    /* contact page */
     .contact-info {
         flex-direction: column;
         padding: 2rem 1rem;
-    }
-
-    .contact h2 {
-        font-size: 2rem;
-        padding: 2rem 0 1rem;
-        margin: 0;
     }
 
     .contact-info li {
@@ -446,6 +484,12 @@ footer {
         height: 300px;
     }
     
+}
+
+@media only screen and (max-width: 600px) {
+    .action-container article {
+        width: 100%;
+    }
 }
 
 
