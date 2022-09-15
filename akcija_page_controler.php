@@ -1,5 +1,6 @@
 <?php
 
+$page = 'Action page';
 
 require __DIR__ . '/views/_layout/v-header.php';
 

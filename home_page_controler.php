@@ -1,5 +1,6 @@
 <?php
 
+$page = 'Home page';
 
 require __DIR__ . '/views/_layout/v-header.php';
 
