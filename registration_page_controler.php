@@ -64,6 +64,10 @@ if(isset($_POST['registration'])) {
     }
 }
 
+$is_errors = count($systemErrors) > 0 ? true : false;
+
+
+
 require __DIR__ . '/views/_layout/v-header.php';
 
 require __DIR__ . '/views/v-registration.php';

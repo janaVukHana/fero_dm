@@ -272,6 +272,11 @@ form {
     margin-top: .6rem;
 }
 
+.err-msg {
+    color: red;
+    font-size: 4rem;
+}
+
 .btn-login {
     min-width: 30%;
     padding: 0.5rem 1rem;

@@ -4,6 +4,7 @@
         <div class="form-group">
             <label for="username">Username</label><br>
             <input type="text" id="username" name="username">
+            <small class="err-msg"><?php echo $systemErrors['username_err']; ?></small>
         </div>
         <div class="form-group">
             <label for="email">Email</label><br>
