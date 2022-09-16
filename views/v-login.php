@@ -1,6 +1,6 @@
 <div class="form-login">
     <h2>Login</h2>
-    <form action="" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <div class="form-group">
             <label for="username">Username</label><br>
             <input type="text" id="username" name="username">
@@ -9,6 +9,6 @@
             <label for="password">Password</label><br>
             <input type="password" id="password" name="password">
         </div>
-        <button class="btn-login" type="submit">Login</button>
+        <button class="btn-login" type="submit" name="login">Login</button>
     </form>
 </div>

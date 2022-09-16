@@ -273,7 +273,7 @@ form {
 }
 
 .btn-login {
-    width: 30%;
+    min-width: 30%;
     padding: 0.5rem 1rem;
     border: 1px solid  var(--dark);
     border-radius: 4px;
