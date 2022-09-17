@@ -8,7 +8,7 @@ class DB {
 
     public function connect() {
         // dsn = data source name
-        $dsn = "mysql:host = $this->host;dbname=$this->dbname;charset=utf8";
+        $dsn = "mysql:host=$this->host;dbname=$this->dbName;charset=utf8";
         // pdo = php data object
         $pdo = new PDO($dsn, $this->username, $this->password);
         // napvari acocijativni niz

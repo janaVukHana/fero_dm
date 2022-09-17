@@ -10,11 +10,11 @@ class Users extends DB {
      */
     public function registration(string $username, string $email, string $password):bool {
         // check if that user allready exists
-        $sql = "SELECT count(username) AS num FROM `Users` WHERE username=?";
+        $sql = "SELECT count(username) AS num FROM `Users` WHERE username=?;";
         $pdo = new DB();
         $stmt = $pdo->connect()->prepare($sql);
         $stmt->execute([$username]);
-        // var_dump($username);
+        var_dump($stmt);
         $row = $stmt->fetch();
 
         if($row['num'] > 0) {
