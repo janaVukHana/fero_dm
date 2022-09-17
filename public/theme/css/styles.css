@@ -270,11 +270,11 @@ form {
     border: 1px solid var(--dark);
     border-radius: 4px;
     margin-top: .6rem;
+    margin-bottom: .6rem;
 }
 
 .err-msg {
     color: red;
-    font-size: 4rem;
 }
 
 .btn-login {

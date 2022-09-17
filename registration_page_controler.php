@@ -2,6 +2,8 @@
 
 // var_dump('ilija');
 
+require_once __DIR__ . '/models/DB.php';
+require_once __DIR__ . '/models/Users.php';
 require_once __DIR__ . '/models/test_input.php';
 $systemErrors = [];
 $username = $email = $password = "";
@@ -37,34 +39,36 @@ if(isset($_POST['registration'])) {
     // have one capital letter and one number and start with letter
     if(empty($_POST['password'])) {
         $systemErrors['password_err'] = '* You need to type something';
-        echo $systemErrors['password_err'];
     } else {
         $password = test_input($_POST['password']);
 
         // check if password is 6 to 10 chars long
         if(strlen($password) < 6 || strlen($password) > 10) {
             $systemErrors['password_err'] = "* Password must have 6 to 10 characters.";
-            echo $systemErrors['password_err'];
         }
         // check if password start with letter
         else if(!ctype_alpha($password[0])) {
             $systemErrors['password_err'] = "* Password must start with letter.";
-            echo $systemErrors['password_err'];
         }
         // check if there is capital letter in password
         else if(!preg_match('/[A-Z]/', $password)){
             $systemErrors['password_err'] = "* One capital letter is required.";
-            echo $systemErrors['password_err'];
         } 
         // check if there is number in password
         else if (!preg_match('~[0-9]+~', $password)) {
             $systemErrors['password_err'] = "* Number is required.";
-            echo $systemErrors['password_err'];
         }
     }
-}
 
-$is_errors = count($systemErrors) > 0 ? true : false;
+    $is_errors = count($systemErrors) > 0 ? true : false;
+    
+     // if there is no errors in form try to register user
+     if(!$is_errors) {
+        $user = new Users();
+        $user_registration = $user->registration($username, $email, $password);
+         echo 'There is No000000 ERRORS';
+     }
+}
 
 
 
