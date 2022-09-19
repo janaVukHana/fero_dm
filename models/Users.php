@@ -36,7 +36,7 @@ class Users extends DB {
     }
 
     public function admin_login(string $username, string $password): bool {
-        $sql = "SELECT * FROM 'Users'";
+        $sql = "SELECT * FROM `Users`";
         // $stmt = $this->connect()->query($sql);
         // $stmt = $pdo->connect()->query($sql);
         $st = $this->connect()->query($sql);

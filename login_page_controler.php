@@ -50,7 +50,7 @@ if(isset($_POST['login'])) {
     if(!$is_error) {
         // if there is no errors, check if username and password are matched in DB
        $admin = new Users();
-       $admin_login = $admin->admin_login($username, $password);
+       $admin_log = $admin->admin_login($username, $password);
        var_dump('trazenje greske');
     } else {
         echo 'ima greske';
