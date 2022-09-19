@@ -14,7 +14,7 @@ class Users extends DB {
         $pdo = new DB();
         $stmt = $pdo->connect()->prepare($sql);
         $stmt->execute([$username]);
-        var_dump($stmt);
+        // var_dump($stmt);
         $row = $stmt->fetch();
 
         if($row['num'] > 0) {
@@ -33,6 +33,23 @@ class Users extends DB {
         if($result) {
             return true;
         }
+    }
 
+    public function admin_login(string $username, string $password): bool {
+        $sql = "SELECT * FROM 'Users'";
+        // $stmt = $this->connect()->query($sql);
+        // $stmt = $pdo->connect()->query($sql);
+        $st = $this->connect()->query($sql);
+        echo 'test test';
+
+        while($row = $stmt->fetch()) {
+            if($row['username'] == $username && password_verify($password, $row['password'])) {
+                echo 'there is  user with matchin password in database, but I need admin';
+                return true;
+            } else {
+                echo 'no matching';
+                return false;
+            }
+        }
     }
 }

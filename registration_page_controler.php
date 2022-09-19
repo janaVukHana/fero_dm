@@ -1,6 +1,6 @@
 <?php
 
-// var_dump('ilija');
+// var_dump('fix_error');
 
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Users.php';
@@ -66,7 +66,12 @@ if(isset($_POST['registration'])) {
      if(!$is_errors) {
         $user = new Users();
         $user_registration = $user->registration($username, $email, $password);
-         echo 'There is No000000 ERRORS';
+     }
+
+     if($user_registration) {
+        echo 'NOTE: Send user to login page';
+     } else {
+        echo 'User exists';
      }
 }
 
