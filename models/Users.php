@@ -35,21 +35,41 @@ class Users extends DB {
         }
     }
 
+    /**
+     * This function return boolean value if user is admin and username and password match
+     * @param string $username
+     * @param string $password
+     * @return boolean
+     */
     public function admin_login(string $username, string $password): bool {
         $sql = "SELECT * FROM `Users`";
-        // $stmt = $this->connect()->query($sql);
-        // $stmt = $pdo->connect()->query($sql);
-        $st = $this->connect()->query($sql);
-        echo 'test test';
+        $stmt = $this->connect()->query($sql);
+
+        while($row = $stmt->fetch()) {
+            if($row['username'] == 'ilija' && password_verify($password, $row['password'])) {
+                return true;
+            } 
+        }
+
+        return false;
+    }
+
+    /**
+     * This function return if user username and password match
+     * @param string $username
+     * @param string $password
+     * @return boolean
+     */
+    public function user_login(string $username, string $password): bool {
+        $sql = "SELECT * FROM `Users`";
+        $stmt = $this->connect()->query($sql);
 
         while($row = $stmt->fetch()) {
             if($row['username'] == $username && password_verify($password, $row['password'])) {
-                echo 'there is  user with matchin password in database, but I need admin';
                 return true;
-            } else {
-                echo 'no matching';
-                return false;
-            }
+            } 
         }
+
+        return false;
     }
 }

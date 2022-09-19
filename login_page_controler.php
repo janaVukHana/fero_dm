@@ -51,9 +51,14 @@ if(isset($_POST['login'])) {
         // if there is no errors, check if username and password are matched in DB
        $admin = new Users();
        $admin_log = $admin->admin_login($username, $password);
-       var_dump('trazenje greske');
+       echo 'nema greske u systemErrors';
+       if($admin_log) {
+        echo 'admin se ulogovao';
+       } else {
+        echo 'admin se nije ulogovao';
+       }
     } else {
-        echo 'ima greske';
+        echo 'ima greske: systemErrors';
     }
 }
 
