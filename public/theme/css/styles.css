@@ -206,6 +206,34 @@ main {
 }
 
 /* ///////////////////////////////////////////////////////////////////////////// */
+/* ASORTIMAN PAGE */
+
+/* ASORTIMAN page treba da bude slicna kao ACTION PAGE. 
+   Razlika je u velicini fonta, poziciji desc i izacivanju h2 a ostanku desc ili obratno.
+*/
+.action-container .asortiman {
+    background-color: var(--dark);
+    align-self: stretch;
+    display: flex;
+}
+
+.asortiman-item {
+    position: relative;
+    background-color: #fff;
+}
+
+h2.asortiman-desc {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////// */
 /* ACTION PAGE */
 .action-container {
     background-color: var(--dark);

@@ -1,5 +1,7 @@
 <?php 
 
+// NOTE - REMINDER: da li koristiti static kod registracije i logina???
+
 class Users extends DB {
     /**
      * This function check if user did make successufuly registration
