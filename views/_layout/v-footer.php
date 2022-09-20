@@ -32,6 +32,6 @@
     </footer>
     </div>
 
-    <script src="theme/js/app.js" type="text/javascript"></script>
+    <script src="./public/theme/js/app.js" type="text/javascript"></script>
 </body>
 </html>

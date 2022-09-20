@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Users.php';
@@ -54,6 +54,8 @@ if(isset($_POST['login'])) {
        echo 'nema greske u systemErrors';
        if($admin_log) {
         echo 'admin se ulogovao';
+        $_SESSION['admin'] = $username; 
+        header("Location: http://localhost/workspace/fero_dm/create_action_page_controler.php");
        } else {
         echo 'admin se nije ulogovao';
        }

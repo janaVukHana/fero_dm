@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // var_dump('fix_error');
 
