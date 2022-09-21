@@ -25,4 +25,13 @@ class Action extends DB {
             return false;
         }
     }
+
+    public static function get_all_action_items():array {
+        $sql = "SELECT * FROM `Actions`";
+        $pdo = new DB();
+        $st = $pdo->connect()->query($sql);
+
+        $rows= $st->fetchAll();
+        return $rows;
+    }
 }
