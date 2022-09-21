@@ -29,6 +29,7 @@ if(isset($_POST['create_action'])) {
             if($file_size <= 1000000) {
                 if(empty($systemErrors)) {
                     move_uploaded_file($file_tmp, $target_dir);
+                    echo 'ilija';
                 }
             } else {
                 $systemErrors['file_err'] = '* File is too large.';
