@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-// require_once __DIR__ . '/models/DB.php';
-// require_once __DIR__ . '/models/Users.php';
+require_once __DIR__ . '/models/DB.php';
+require_once __DIR__ . '/models/Action.php';
 require_once __DIR__ . '/models/test_input.php';
 
 $page = 'Create action page';
@@ -11,7 +11,6 @@ $systemErrors = [];
 
 if(isset($_POST['create_action'])) {
     // UPLOAD: file
-
     $allower_ext = ['png', 'jpg', 'jpeg', 'gif'];
 
     if(!empty($_FILES['upload']['name'])) {
@@ -32,17 +31,67 @@ if(isset($_POST['create_action'])) {
             if($file_size <= 1000000) {
                 if(empty($systemErrors)) {
                     move_uploaded_file($file_tmp, $target_dir);
+                    echo 'File uploaded to public/theme/img - VALID' . '<br>';
                 }
             } else {
                 $systemErrors['file_err'] = '* File is too large.';
+                echo 'Too large file' . '<br>';
             }
         } else {
             $systemErrors['file_err'] = '* Invalid file type.';
+            echo 'Invalid file' . '<br>';
+
         }
     } else {
         $systemErrors['file_err'] = '* Please choose a file.';
+        echo 'You must choose file' . '<br>';
     }
-    // header('Location: home_page_controler.php');
+
+    // validate title 
+    // INPUT TITLE: Required + must have 2 or more chars
+    if(empty($_POST['title'])) {
+        $systemErrors['title_err'] = '* title is required';
+        echo 'title is required' . '<br>';
+    } else {
+        $title = test_input($_POST['title']);
+        if(strlen($title) < 2) {
+            $systemErrors['title_err'] = '* title must have at least to chars';
+            echo 'title must have 2 chars' . '<br>';
+        } else {
+            echo 'title is VALID' . '<br>';
+        }
+    }
+
+    // validate description
+    // TEXTAREA DESC: Required + min 10 chars + max 100 chars
+    if(empty($_POST['description'])) {
+        $systemErrors['description_err'] = '* Description is required';
+        echo 'description is required';
+    } else {
+        $description = test_input($_POST['description']);
+        if(strlen($description) < 10) {
+            $systemErrors['description_err'] = '* Description must have at least 10 chars';
+            echo 'description must have min 10 chars';
+        } else if(strlen($description) > 100) {
+            $systemErrors['description_err'] = '* Description is too long. Max 100 chars';
+            echo 'Description is too long. Max 100 chars';
+        } else {
+            echo 'description is VALID';
+        }
+    }
+
+    $is_errors = count($systemErrors) > 0 ? true : false;
+
+    if(!$is_errors) {
+        // now you can create action in database, and then relocate to action page
+        
+        if(Action::create_action($target_dir, $title, $description)) {
+            header('Location: akcija_page_controler.php');
+        } else {
+            echo 'Could not connect to database';
+        }
+    } 
+    
 }
 
 
