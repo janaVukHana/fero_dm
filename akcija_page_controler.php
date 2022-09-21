@@ -8,6 +8,18 @@ require_once __DIR__ . '/models/Action.php';
 
 // probaj da dohvatis iteme is database-a
 $action_items = Action::get_all_action_items();
+// var_dump($_POST);
+
+if(isset($_POST['delete'])) {
+    echo 'user pressed delete';
+    // delete item from date base 
+    $id = $_POST['id'];
+} else if(isset($_POST['update'])) {
+    // update item from database
+    echo 'user pressed update';
+    $id = $_POST['id'];
+
+}
 // var_dump($action_items);
 
 // if($action_items) {

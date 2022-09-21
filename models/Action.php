@@ -26,12 +26,30 @@ class Action extends DB {
         }
     }
 
+    /**
+     * This function return all action items from DB
+     * @return array $rows
+     */
     public static function get_all_action_items():array {
-        $sql = "SELECT * FROM `Actions`";
+        // $sql = "SELECT * FROM `Actions`";
+        $sql = "SELECT * FROM `Actions` ORDER BY id DESC";
+        
         $pdo = new DB();
         $st = $pdo->connect()->query($sql);
 
         $rows= $st->fetchAll();
         return $rows;
     }
+
+    /**
+     * This function delete action item
+     */
+
+     /**
+     * This function update action item
+     */
+
+    /**
+     * This function get item by id
+     */
 }
