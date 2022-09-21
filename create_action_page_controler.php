@@ -19,7 +19,7 @@ if(isset($_POST['create_action'])) {
         $file_size = $_FILES['upload']['size'];
         $file_tmp = $_FILES['upload']['tmp_name'];
 
-        $target_dir = "/public/theme/img/{$file_name}";
+        $target_dir = "public/theme/img/{$file_name}";
 
         // get file extension
         $file_ext = explode('.', $file_name);
