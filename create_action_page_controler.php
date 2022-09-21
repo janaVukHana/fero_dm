@@ -20,8 +20,11 @@ if(isset($_POST['create_action'])) {
         $file_tmp = $_FILES['upload']['tmp_name'];
 
         $target_dir = "public/theme/img/{$file_name}";
+        // da bi radilo, tj. valjda file permissions su falili. 
+        //Resenje: u terminalu sam otvorio fero_dm folder.
+        // Komanda: chmod -R 777 public/theme/img
 
-        // get file extension
+        // get file extension 
         $file_ext = explode('.', $file_name);
         $file_ext = strtolower(end($file_ext));
         
@@ -29,7 +32,6 @@ if(isset($_POST['create_action'])) {
             if($file_size <= 1000000) {
                 if(empty($systemErrors)) {
                     move_uploaded_file($file_tmp, $target_dir);
-                    echo 'ilija';
                 }
             } else {
                 $systemErrors['file_err'] = '* File is too large.';
