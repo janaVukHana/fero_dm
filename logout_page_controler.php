@@ -4,4 +4,4 @@ session_start();
 
 session_destroy();
 
-header("Location: http://localhost/workspace/fero_dm/login_page_controler.php");
+header("Location: http://localhost/workspace/fero_dm_project/login_page_controler.php");

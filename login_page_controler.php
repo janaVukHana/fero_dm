@@ -55,7 +55,7 @@ if(isset($_POST['login'])) {
        if($admin_log) {
         echo 'admin se ulogovao';
         $_SESSION['admin'] = $username; 
-        header("Location: http://localhost/workspace/fero_dm/create_action_page_controler.php");
+        header("Location: http://localhost/workspace/fero_dm_project/create_action_page_controler.php");
        } else {
         echo 'admin se nije ulogovao';
        }

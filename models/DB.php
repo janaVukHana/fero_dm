@@ -1,10 +1,10 @@
 <?php
 
 class DB {
-    private $host = 'localhost';
-    private $username = 'root';
-    private $password = '';
-    private $dbName = 'fero_dm';
+    protected $host = 'localhost';
+    protected $username = 'root';
+    protected $password = '';
+    protected $dbName = 'fero_dm';
 
     public function connect() {
         // dsn = data source name
