@@ -79,4 +79,21 @@ class Action extends DB {
         $result= $stmt->fetch();
         return $result;
     }
+
+    /**
+     * This function return image path so you can delete it from img folder when you are deleting item from database
+     * @param string id
+     * @return array
+     */
+    public static function get_image_path(string $id):array {
+        $sql = "SELECT `file_path` FROM `Actions` WHERE id = :id";
+        $pdo = new DB();
+        $stmt = $pdo->connect()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        
+        $result= $stmt->fetch();
+        var_dump($result);
+        return $result;
+    }
 }

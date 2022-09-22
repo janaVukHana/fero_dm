@@ -11,6 +11,11 @@ if(isset($_POST['delete'])) {
     // echo 'user pressed delete';
     // delete item from date base 
     $id = $_POST['id'];
+    // delete image from folder
+    $image_path = Action::get_image_path($id);
+    unlink($image_path['file_path']);
+
+    // delete item from database
     $delete_item = Action::delete_one_by_id($id);
     
     if($delete_item) {
