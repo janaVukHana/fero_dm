@@ -35,15 +35,30 @@ class Action extends DB {
         $sql = "SELECT * FROM `Actions` ORDER BY id DESC";
         
         $pdo = new DB();
-        $st = $pdo->connect()->query($sql);
+        $stmt = $pdo->connect()->query($sql);
 
-        $rows= $st->fetchAll();
+        $rows= $stmt->fetchAll();
         return $rows;
     }
 
     /**
-     * This function delete action item
+     * This function delete action item and return boolean value
+     * @param string $id
+     * @return bool
      */
+    public static function delete_one_by_id(string $id):bool {
+        $sql = "DELETE FROM `Actions` WHERE id = :id";
+        $pdo = new DB();
+        $stmt = $pdo->connect()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $result = $stmt->execute();
+
+        if($result) {
+            return true;
+        } 
+        return false;
+        
+    }
 
      /**
      * This function update action item
@@ -51,5 +66,17 @@ class Action extends DB {
 
     /**
      * This function get item by id
+     * @param string $id
+     * @return array $result
      */
+    public static function get_one_by_id(string $id):array {
+        $sql = "SELECT `id`, `file_path`, `title`, `description` FROM `Actions` WHERE id = :id";
+        $pdo = new DB();
+        $stmt = $pdo->connect()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        
+        $result= $stmt->fetch();
+        return $result;
+    }
 }
