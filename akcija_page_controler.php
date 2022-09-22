@@ -26,6 +26,9 @@ if(isset($_POST['delete'])) {
     // update item from database
     echo 'user pressed update';
     $id = $_POST['id'];
+    $_SESSION['id'] = $id;
+    header("Location: http://localhost/workspace/fero_dm_project/update_page_controler.php");
+
 }
 
 // probaj da dohvatis iteme is database-a

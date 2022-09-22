@@ -57,7 +57,6 @@ class Action extends DB {
             return true;
         } 
         return false;
-        
     }
 
      /**
@@ -93,7 +92,7 @@ class Action extends DB {
         $stmt->execute();
         
         $result= $stmt->fetch();
-        var_dump($result);
+
         return $result;
     }
 }
