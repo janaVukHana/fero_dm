@@ -4,12 +4,10 @@ session_start();
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Action.php';
 
-// probaj da dohvatis iteme is database-a
-// $action_items = Action::get_all_action_items();
-
 if(isset($_POST['delete'])) {
     // echo 'user pressed delete';
-    // delete item from date base 
+
+    // delete item from database 
     $id = $_POST['id'];
     // delete image from folder
     $image_path = Action::get_image_path($id);
