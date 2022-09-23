@@ -69,9 +69,8 @@ class Action extends DB {
         $stmt->bindValue(':id', $id);
         $stmt->bindValue(':title', $title);
         $stmt->bindValue(':description', $description);
-        echo 'id=' . $id . ' ' . 'title=' . $title . ' ' . 'description=' . $description;
+
         $result = $stmt->execute();
-        echo 'ovo se nece izvrsiti';
 
         if($result) {
             return true;
