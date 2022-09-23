@@ -6,7 +6,7 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!
             </p>
-            <a href="#" class="btn btn--white btn--lg">Pregledaj proizvode</a>
+            <a href="#" class="btn btn-border-white">Pregledaj proizvode</a>
         </div>
     </div>
     <div class="box-slika">
@@ -21,7 +21,7 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!
             </p>
-            <a href="akcija_page_controler.php" class="btn btn--dark btn--lg">Akcija %</a>
+            <a href="akcija_page_controler.php" class="btn">Akcija %</a>
         </div>
     </div>
     <div class="box-slika">
@@ -36,7 +36,7 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!
             </p>
-            <a href="#" class="btn btn--dark btn--lg">Saznaj vise</a>
+            <a href="#" class="btn">Saznaj vise</a>
         </div>
     </div>
     <div class="box-slika">

@@ -47,26 +47,27 @@ img {
 /* utility classes */
 .btn {
     color: #fff;
+    background-color: var(--dark);
+    font-size: 1.2rem;
+    min-width: 30%;
     padding: 0.5rem 1rem;
-    border: 1px solid #fff;
+    border: 1px solid var(--dark);
     border-radius: 12px;
     transition: .3s ease-in-out;
 }
 
-.btn--dark {
-    color: var(--dark);
-    border: 1px solid var(--dark);
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    border-color: #fff;
 }
 
-.btn--dark:hover {
-    color: var(--dark);
-    background-color: var(--light-color);
+.btn-border-white {
+    border-color: #fff;
 }
 
-.btn--white:hover {
-    color: var(--dark);
-    background-color: #fff;
-}
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 /* NAVIGATION */
@@ -303,22 +304,6 @@ form {
 
 .err-msg {
     color: red;
-}
-
-.btn-login {
-    min-width: 30%;
-    padding: 0.5rem 1rem;
-    border: 1px solid  var(--dark);
-    border-radius: 4px;
-    color: #fff;
-    background-color: var(--dark);
-    font-size: 1.2rem;
-}
-
-.btn-login:hover {
-    cursor: pointer;
-    background-color: var(--main-color);
-    border-color: var(--main-color);
 }
 
 /* ///////////////////////////////////////////////////////////////////////////// */

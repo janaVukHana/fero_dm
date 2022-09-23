@@ -9,6 +9,6 @@
             <label for="password">Password</label><br>
             <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($password) ?>">
         </div>
-        <button class="btn-login" type="submit" name="login">Login</button>
+        <button class="btn" type="submit">Login</button>
     </form>
 </div>

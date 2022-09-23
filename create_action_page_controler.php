@@ -9,7 +9,7 @@ $page = 'Create action page';
 
 $systemErrors = [];
 
-if(isset($_POST['create_action'])) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // UPLOAD: file
     $allower_ext = ['png', 'jpg', 'jpeg', 'gif'];
 

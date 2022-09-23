@@ -9,7 +9,8 @@ require_once __DIR__ . '/models/test_input.php';
 $systemErrors = [];
 $username = $email = $password = "";
 
-if(isset($_POST['registration'])) {
+// if(isset($_POST['registration'])) {
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // REMINDER FOR MYSELF....
     // there is other way to check if user pressed form button
     // I has something to do with $_POST. Will check later.

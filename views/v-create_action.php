@@ -18,6 +18,6 @@
             <textarea class="description" type="description" id="description" name="description" rows="4" cols="50"><?php echo htmlspecialchars($description); ?></textarea>
             <small class="err-msg"><?php echo $systemErrors['description_err']; ?></small>
         </div>
-        <button class="btn-login" type="submit" name="create_action">Create</button>
+        <button class="btn" type="submit">Create</button>
     </form>
 </section>

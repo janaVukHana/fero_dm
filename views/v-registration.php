@@ -16,6 +16,6 @@
             <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($password) ?>">
             <small class="err-msg"><?php echo $systemErrors['password_err']; ?></small>
         </div>
-        <button class="btn-login" type="submit" name="registration">Registration</button>
+        <button class="btn" type="submit">Registration</button>
     </form>
 </div>

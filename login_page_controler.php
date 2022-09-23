@@ -8,7 +8,7 @@ require_once __DIR__ . '/models/test_input.php';
 $systemErrors = [];
 $email = $password = '';
 
-if(isset($_POST['login'])) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // validate username 
     // INPUT USERNAME: Required + must have 2 or more chars
     if(empty($_POST['username'])) {
