@@ -10,14 +10,14 @@
                     </figcaption>
                 </figure>
                 <?php if($_SESSION['admin']) { ?>
-                    <div class="btn-crud">
+                    <div class="btns-crud">
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                             <input type="hidden" name="id" value="<?php echo htmlspecialchars($item['id']); ?>">
-                            <button type="submit" class="btn btn-del" name="delete">Delete</button>
+                            <button type="submit" class="btn btn-border-white btn-del" name="delete">Delete</button>
                         </form>
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                             <input type="hidden" name="id" value="<?php echo htmlspecialchars($item['id']); ?>">
-                            <button type="submit" class="btn btn-upd" name="update">Update</button>
+                            <button type="submit" class="btn btn-border-white btn-upd" name="update">Update</button>
                         </form>
                     </div>
                 <?php } ?>
