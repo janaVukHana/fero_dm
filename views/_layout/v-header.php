@@ -46,8 +46,13 @@
                         <li><a href="#">Projekti</a></li>
                         <li><a href="#">O Nama</a></li>
                         <li><a class="<?php if($page == 'Kontakt page') echo htmlspecialchars('active'); ?>" href="kontakt_page_controler.php">Kontakt</a></li>
-                        <li><a class="<?php if($page == 'Create action page') echo htmlspecialchars('active'); ?>" href="create_action_page_controler.php"><?php if(isset($_SESSION['admin'])) echo htmlspecialchars('Create action'); ?></a></li>
-                        <li><a href="logout_page_controler.php"><?php if(isset($_SESSION['admin'])) echo htmlspecialchars('Logout'); ?></a></li>
+                        <?php if(isset($_SESSION['admin'])) { ?>
+                            <li><a class="<?php if($page == 'Create action page') echo htmlspecialchars('active'); ?>" href="create_action_page_controler.php"><?php if(isset($_SESSION['admin'])) echo htmlspecialchars('Create action'); ?></a></li>
+                            <li><a href="logout_page_controler.php">Logout</a></li>
+                        <?php } ?>
+                        <?php if(!isset($_SESSION['admin'])) { ?>
+                            <li><a class="<?php if($page == 'Login page') echo htmlspecialchars('active'); ?>" href="login_page_controler.php">Log In</a></li>
+                        <?php } ?>
                     </ul> 
                 </div>
 

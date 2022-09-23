@@ -5,6 +5,8 @@ require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Users.php';
 require_once __DIR__ . '/models/test_input.php';
 
+$page = 'Login page';
+
 $systemErrors = [];
 $email = $password = '';
 

@@ -244,12 +244,16 @@ h2.asortiman-desc {
     align-items: center;
     padding: 2rem;
     text-align: center;
+    /* background-color: green; */
 }
 
 .action-container article {
     width: 25%;
     padding: .5rem;
     margin-bottom: 1rem;
+    /* background-color: red; */
+    align-self: flex-end;
+    
 }
 
 .price {

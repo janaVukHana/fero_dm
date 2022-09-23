@@ -6,7 +6,7 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!
             </p>
-            <a href="#" class="btn btn-border-white">Pregledaj proizvode</a>
+            <a href="asortiman_page_controler.php" class="btn btn-border-white">Pregledaj proizvode</a>
         </div>
     </div>
     <div class="box-slika">

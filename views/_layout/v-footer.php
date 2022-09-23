@@ -7,7 +7,7 @@
                     <h3>Navigacija</h3>
                     <ul>
                         <li><a href="home_page_controler.php">Pocetna</a></li>
-                        <li><a href="#">Asortiman</a></li>
+                        <li><a href="asortiman_page_controler.php">Asortiman</a></li>
                         <li><a href="akcija_page_controler.php">Akcija</a></li>
                         <li><a href="#">Projekti</a></li>
                         <li><a href="#">O nama</a></li>

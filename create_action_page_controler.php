@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo 'You must choose file' . '<br>';
     }
 
-    // validate input
+    // validate inputs: title, description
     require_once __DIR__ . '/models/validate_input.php';
 
     $is_errors = count($systemErrors) > 0 ? true : false;
