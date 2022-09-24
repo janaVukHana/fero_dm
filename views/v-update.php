@@ -15,6 +15,14 @@
             <label for="description">Description</label><br>
             <textarea class="description" type="description" id="description" name="description" rows="4" cols="50"><?php echo htmlspecialchars($image['description']); ?></textarea>
         </div>
+        <div class="form-group">
+            <label for="category">Choose category</label>
+            <select id="category" name="category">
+                <option value="ekseri" <?php if($image['category'] == 'ekseri') echo htmlspecialchars('selected'); ?>>Ekseri</option>
+                <option value="dvoriste" <?php if($image['category'] == 'dvoriste') echo htmlspecialchars('selected'); ?>>Dvoriste</option>
+                <option value="moleraj" <?php if($image['category'] == 'moleraj') echo htmlspecialchars('selected'); ?>>Moleraj</option>
+            </select>
+        </div>
         <button class="btn" type="submit">Update</button>
     </form>
 </section>

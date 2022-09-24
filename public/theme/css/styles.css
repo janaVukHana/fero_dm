@@ -325,7 +325,7 @@ form {
     letter-spacing: 2px;
 }
 
-.form-group input {
+.form-group input, .form-group select {
     width: 100%;
     padding: 0.5rem 1rem;
     border: 1px solid var(--dark);

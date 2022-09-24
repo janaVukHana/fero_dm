@@ -6,16 +6,18 @@ class Action extends DB {
      * @param string $file_path
      * @param string $title
      * @param string $description
+     * @param string $category
      * @return bool
      */
-    public static function create_action(string $file_path, string $title, string $description):bool {
-        $sql = "INSERT INTO `Actions` (file_path, title, description) VALUES (:file_path, :title, :description);";
+    public static function create_action(string $file_path, string $title, string $description, string $category):bool {
+        $sql = "INSERT INTO `Actions` (file_path, title, description, category) VALUES (:file_path, :title, :description, :category);";
 
         $pdo = new DB();
         $stmt = $pdo->connect()->prepare($sql);
         $stmt->bindValue(':file_path', $file_path);
         $stmt->bindValue(':title', $title);
         $stmt->bindValue(':description', $description);
+        $stmt->bindValue(':category', $category);
 
         $result = $stmt->execute();
 
@@ -61,14 +63,20 @@ class Action extends DB {
 
      /**
      * This function update action item
+     * @param string $id
+     * @param string $title
+     * @param string $description
+     * @param string $category
+     * @return bool
      */
-    public static function update_action($id, $title, $description) {
-        $sql = "UPDATE `Actions` SET `title`= :title,`description`= :description WHERE id = :id";
+    public static function update_action(string $id, string $title, string $description, string $category):bool {
+        $sql = "UPDATE `Actions` SET `title`= :title,`description`= :description, `category`= :category WHERE id = :id";
         $pdo = new DB();
         $stmt = $pdo->connect()->prepare($sql);
         $stmt->bindValue(':id', $id);
         $stmt->bindValue(':title', $title);
         $stmt->bindValue(':description', $description);
+        $stmt->bindValue(':category', $category);
 
         $result = $stmt->execute();
 
@@ -84,7 +92,7 @@ class Action extends DB {
      * @return array $result
      */
     public static function get_one_by_id(string $id):array {
-        $sql = "SELECT `id`, `file_path`, `title`, `description` FROM `Actions` WHERE id = :id";
+        $sql = "SELECT `id`, `file_path`, `title`, `description`, `category` FROM `Actions` WHERE id = :id";
         $pdo = new DB();
         $stmt = $pdo->connect()->prepare($sql);
         $stmt->bindValue(':id', $id);
