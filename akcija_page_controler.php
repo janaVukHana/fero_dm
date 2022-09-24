@@ -4,8 +4,6 @@ session_start();
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Action.php';
 
-$items_per_page = '2';
-$item_start_from = '0';
 
 if(isset($_POST['delete'])) {
     // echo 'user pressed delete';
@@ -34,11 +32,24 @@ if(isset($_POST['delete'])) {
 
 }
 
-// probaj da dohvatis iteme is database-a
-$action_items = Action::get_all_action_items($items_per_page, $item_start_from);
+// PAGINATION WORK IN PROGRESS...
+$item_start_from = '0';
+$items_per_page = '1';
+// GET TOTAL NUMBER OF ACTION ITEMS IN DATABASE
+echo 'Num 0f items: ' . $total_num_of_items = Action::get_num_of_items() . '<br>';
+// TOTAL PAGINATION PAGES
+echo 'Num of pages: ' . $num_of_pages = ceil($total_num_of_items / $items_per_page) . '<br>';
+// DETERMINE CURRENT PAGE
+if(!isset($_GET['page'])) {
+    $current_page = 1;
+} else {
+    $current_page = $_GET['page'];
+    $item_start_from = ($current_page - 1) * $items_per_page;
+}
 
-// GET NUMBER OF ACTION ITEMS
-echo 'Num of items: ' . count($action_items);
+// probaj da dohvatis iteme is database-a
+$action_items = Action::get_all_action_items($item_start_from, $items_per_page);
+
 
 // var_dump($action_items);
 

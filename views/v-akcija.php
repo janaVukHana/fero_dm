@@ -32,11 +32,8 @@
 <!-- here goes my first pagination -->
 <div class="center">
     <div class="pagination">
-        <a href="#">1</a>
-        <a href="#" class="active">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
+        <?php for($i = 1; $i < $num_of_pages; $i++) { ?>
+            <a class="<?php if($current_page == $i) echo htmlspecialchars('active'); ?>" href="akcija_page_controler.php?page=<?php echo htmlspecialchars($i); ?>"><?php echo htmlspecialchars($i); ?></a> 
+        <?php } ?>
     </div>
 </div>
