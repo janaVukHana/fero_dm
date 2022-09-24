@@ -4,6 +4,9 @@ session_start();
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Action.php';
 
+$items_per_page = '2';
+$item_start_from = '0';
+
 if(isset($_POST['delete'])) {
     // echo 'user pressed delete';
 
@@ -32,7 +35,10 @@ if(isset($_POST['delete'])) {
 }
 
 // probaj da dohvatis iteme is database-a
-$action_items = Action::get_all_action_items();
+$action_items = Action::get_all_action_items($items_per_page, $item_start_from);
+
+// GET NUMBER OF ACTION ITEMS
+echo 'Num of items: ' . count($action_items);
 
 // var_dump($action_items);
 

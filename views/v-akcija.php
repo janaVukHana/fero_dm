@@ -26,49 +26,17 @@
     <?php } else { ?>
         <h2 style="color: #fff;">There is no Action now</h2>
     <?php } ?>
-    <!-- <article>
-        <figure>
-            <img src="./public/theme/img/akcija-trimer.jpg" alt="Trulli" style="width:100%">
-            <figcaption>
-                <h2 class="price">$99 Outdoor Power</h2>
-                <p class="desc">Save on select Black+Decker Outdoor Power Equipment</p>
-            </figcaption>
-            </figure>
-    </article>
-    <article>
-        <figure>
-            <img src="./public/theme/img/akcija-gorionik.jpg" alt="Trulli" style="width:100%">
-            <figcaption>
-                <h2 class="price">$99 Outdoor Power</h2>
-                <p class="desc">Save on select Black+Decker Outdoor Power Equipment</p>
-            </figcaption>
-            </figure>
-    </article>
-    <article>
-        <figure>
-            <img src="./public/theme/img/akcija-ljuljaska.jpg" alt="Trulli" style="width:100%">
-            <figcaption>
-                <h2 class="price">$99 Outdoor Power</h2>
-                <p class="desc">Save on select Black+Decker Outdoor Power Equipment</p>
-            </figcaption>
-            </figure>
-    </article>
-    <article>
-        <figure>
-            <img src="./public/theme/img/akcija-busilica.jpg" alt="Trulli" style="width:100%">
-            <figcaption>
-                <h2 class="price">$99 Outdoor Power</h2>
-                <p class="desc">Save on select Black+Decker Outdoor Power Equipment</p>
-            </figcaption>
-            </figure>
-    </article>
-    <article>
-        <figure>
-            <img src="./public/theme/img/akcija-busilica.jpg" alt="Trulli" style="width:100%">
-            <figcaption>
-                <h2 class="price">$99 Outdoor Power</h2>
-                <p class="desc">Save on select Black+Decker Outdoor Power Equipment</p>
-            </figcaption>
-            </figure>
-    </article> -->
+   
+</div>
+
+<!-- here goes my first pagination -->
+<div class="center">
+    <div class="pagination">
+        <a href="#">1</a>
+        <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+    </div>
 </div>

@@ -30,11 +30,15 @@ class Action extends DB {
 
     /**
      * This function return all action items from DB
+     * @param string $items_per_page
+     * @param string $items_start_from
      * @return array $rows
      */
-    public static function get_all_action_items():array {
-        // $sql = "SELECT * FROM `Actions`";
-        $sql = "SELECT * FROM `Actions` ORDER BY id DESC";
+    public static function get_all_action_items(string $items_per_page, string $items_start_from):array {
+        // public static function get_all_action_items():array {
+
+        $sql = "SELECT * FROM `Actions` ORDER BY id DESC LIMIT $items_start_from, $items_per_page";
+        // $sql = "SELECT * FROM `Actions` ORDER BY id DESC";
         
         $pdo = new DB();
         $stmt = $pdo->connect()->query($sql);
