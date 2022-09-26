@@ -1,3 +1,37 @@
+<!-- here goes filter menu -->
+    <!-- filter for category, price... think what else... num of items per page -->
+    <div class="filter-form">
+        <form action="" method="GET">
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="ekseri">Ekseri</option>
+                    <option value="dvoriste">Dvoriste</option>
+                    <option value="moleraj" selected>Moleraj</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <select id="price" name="price">
+                    <option value="asc selected">Asc</option>
+                    <option value="desc">Desc</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="items_per_page">Items no.</label>
+                <select id="items_per_page" name="items_per_page">
+                    <option value="3" selected>3</option>
+                    <option value="5">5</option>
+                    <option value="9">9</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            
+            <button class="btn">Filter</button>
+        </form>
+    </div>
+<!-- end of filter menu -->
+
 <div class="action-container">
     
     <?php if($action_items) { ?>
