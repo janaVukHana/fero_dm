@@ -4,6 +4,25 @@ session_start();
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Action.php';
 
+$items_per_page = 9;
+$filter_price = 'desc';
+$filter_category = 'all';
+
+if(!isset($_SESSION['filter_category'])) {
+    $_SESSION['filter_category'] = $filter_category;
+    $_SESSION['filter_price'] = $filter_price;
+    $_SESSION['filter_items_per_page'] = $items_per_page;
+}
+
+if(isset($_GET['filter'])) {
+    $filter_category = $_GET['category'];
+    $filter_price = $_GET['price'];
+    $items_per_page = $_GET['items_per_page'];
+    
+    $_SESSION['filter_category'] = $filter_category;
+    $_SESSION['filter_price'] = $filter_price;
+    $_SESSION['filter_items_per_page'] = $items_per_page;
+} 
 
 if(isset($_POST['delete'])) {
     // echo 'user pressed delete';
@@ -34,11 +53,15 @@ if(isset($_POST['delete'])) {
 
 // PAGINATION WORK IN PROGRESS...
 $item_start_from = '0';
-$items_per_page = '1';
 // GET TOTAL NUMBER OF ACTION ITEMS IN DATABASE
-echo 'Num 0f items: ' . $total_num_of_items = Action::get_num_of_items() . '<br>';
+if($filter_category == 'all') {
+    $total_num_of_items = Action::get_num_of_items();
+} else {
+    $total_num_of_items = Action::get_num_of_filtered_items($filter_category);
+}
 // TOTAL PAGINATION PAGES
-echo 'Num of pages: ' . $num_of_pages = ceil($total_num_of_items / $items_per_page) . '<br>';
+$num_of_pages = ceil($total_num_of_items / $items_per_page);
+
 // DETERMINE CURRENT PAGE
 if(!isset($_GET['page'])) {
     $current_page = 1;
@@ -47,17 +70,22 @@ if(!isset($_GET['page'])) {
     $item_start_from = ($current_page - 1) * $items_per_page;
 }
 
+$_SESSION['page'] = $current_page;
+
+// DEBUGGER ECHO 
+// echo 'item_start_from: '. $item_start_from . '<br>';
+// echo 'items_per_page: '. $items_per_page . '<br>';
+// echo 'filter_price: '. $filter_price . '<br>';
+// echo 'filter_category: '. $filter_category . '<br>';
+// echo 'num_of_pages: '.$num_of_pages . '<br>';
+// echo 'total_num_of_items: '.$total_num_of_items . '<br>';
+
 // probaj da dohvatis iteme is database-a
-$action_items = Action::get_all_action_items($item_start_from, $items_per_page);
-
-
-// var_dump($action_items);
-
-// if($action_items) {
-//     echo 'ima action itemsa';
-// } else {
-//     echo 'nema action itemsa';
-// }
+if($filter_category == 'all') {
+    $action_items = Action::get_all_action_items($item_start_from, $items_per_page, $filter_price);
+} else {
+    $action_items = Action::get_filtered_action_items($item_start_from, $items_per_page, $filter_price, $filter_category);
+}
 
 $page = 'Action page';
 

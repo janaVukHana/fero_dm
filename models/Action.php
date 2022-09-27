@@ -15,6 +15,21 @@ class Action extends DB {
         return count($rows);
     }
 
+     /**
+     * This funtion return number of total items in database
+     * @param string $category
+     * @return int
+     */
+    public static function get_num_of_filtered_items(string $category):int {
+        $sql = "SELECT * FROM `Actions` WHERE category = '$category'";
+        
+        $pdo = new DB();
+        $stmt = $pdo->connect()->query($sql);
+
+        $rows= $stmt->fetchAll();
+        return count($rows);
+    }
+
     /**
      * This function create return boolean if action item is created in database
      * @param string $file_path
@@ -46,13 +61,33 @@ class Action extends DB {
      * This function return all action items from DB
      * @param string $items_per_page
      * @param string $items_start_from
+     * @param string $order
      * @return array $rows
      */
-    public static function get_all_action_items(string $items_start_from, string $items_per_page, ):array {
+    public static function get_all_action_items(string $items_start_from, string $items_per_page, string $order):array {
 
-        $sql = "SELECT * FROM `Actions` ORDER BY id DESC LIMIT $items_start_from, $items_per_page";
-        
+        $sql = "SELECT * FROM `Actions` ORDER BY id $order LIMIT $items_start_from, $items_per_page";
         $pdo = new DB();
+        
+        $stmt = $pdo->connect()->query($sql);
+
+        $rows= $stmt->fetchAll();
+        return $rows;
+    }
+
+    /**
+     * This function return all filtered items from DB by category
+     * @param string $items_per_page
+     * @param string $items_start_from
+     * @param string $order
+     * @param string $category
+     * @return array $rows
+     */
+    public static function get_filtered_action_items(string $items_start_from, string $items_per_page, string $order, string $category):array {
+
+        $sql = "SELECT * FROM `Actions` WHERE category = '$category' ORDER BY id $order LIMIT $items_start_from, $items_per_page";
+        $pdo = new DB();
+        
         $stmt = $pdo->connect()->query($sql);
 
         $rows= $stmt->fetchAll();
