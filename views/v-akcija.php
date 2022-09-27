@@ -2,7 +2,7 @@
     <!-- filter for category, price, time added... think what else... num of items per page -->
     <div class="filter-form">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="category">Category</label>
                 <select id="category" name="category">    
                     <option value="all" <?php if(!isset($_GET['category']) || $_GET['category'] == 'all') echo htmlspecialchars('selected'); ?>>All</option>      
@@ -17,8 +17,8 @@
                     <option value="asc" <?php if(isset($_GET['price']) && $_GET['price'] == 'asc') echo htmlspecialchars('selected'); ?>>Asc</option>
                     <option value="desc" <?php if(!isset($_GET['price']) || $_GET['price'] == 'desc') echo htmlspecialchars('selected'); ?>>Desc</option>
                 </select>
-            </div>
-            <div class="form-group">
+            </div> -->
+            <!-- <div class="form-group">
                 <label for="items_per_page">Items no.</label>
                 <select id="items_per_page" name="items_per_page">
                     <option value="3" <?php if(isset($_GET['items_per_page']) && $_GET['items_per_page'] == '3') echo htmlspecialchars('selected'); ?>>3</option>
@@ -26,7 +26,32 @@
                     <option value="9" <?php if(!isset($_GET['items_per_page']) || $_GET['items_per_page'] == '9') echo htmlspecialchars('selected'); ?>>9</option>
                     <option value="12" <?php if(isset($_GET['items_per_page']) && $_GET['items_per_page'] == '12') echo htmlspecialchars('selected'); ?>>12</option>
                 </select>
-            </div>            
+            </div>             -->
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">    
+                    <option value="all" <?php if($filter_category == 'all') echo htmlspecialchars('selected'); ?>>All</option>      
+                    <option value="ekseri" <?php if($filter_category == 'ekseri') echo htmlspecialchars('selected'); ?>>Ekseri</option>
+                    <option value="dvoriste" <?php if($filter_category == 'dvoriste') echo htmlspecialchars('selected'); ?>>Dvoriste</option>
+                    <option value="moleraj" <?php if($filter_category == 'moleraj') echo htmlspecialchars('selected'); ?>>Moleraj</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <select id="price" name="price">
+                    <option value="asc" <?php if($filter_price == 'asc') echo htmlspecialchars('selected'); ?>>Asc</option>
+                    <option value="desc" <?php if($filter_price == 'desc') echo htmlspecialchars('selected'); ?>>Desc</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="items_per_page">Items no.</label>
+                <select id="items_per_page" name="items_per_page">
+                    <option value="3" <?php if($items_per_page == '3') echo htmlspecialchars('selected'); ?>>3</option>
+                    <option value="5" <?php if($items_per_page == '5') echo htmlspecialchars('selected'); ?>>5</option>
+                    <option value="9" <?php if($items_per_page == '9') echo htmlspecialchars('selected'); ?>>9</option>
+                    <option value="12" <?php if($items_per_page == '12') echo htmlspecialchars('selected'); ?>>12</option>
+                </select>
+            </div>    
 
             <button class="btn" name="filter">Filter</button>
         </form>
@@ -69,7 +94,15 @@
 <div class="center">
     <div class="pagination">
         <?php for($i = 1; $i <= $num_of_pages; $i++) { ?>
-            <a class="<?php if($current_page == $i) echo htmlspecialchars('active'); ?>" href="akcija_page_controler.php?filter=&items_per_page=<?php echo $_SESSION['filter_items_per_page']; ?>&price=<?php echo $_SESSION['filter_price']; ?>&category=<?php echo $_SESSION['filter_category']; ?>&page=<?php echo htmlspecialchars($i); ?>"><?php echo htmlspecialchars($i); ?></a> 
+            <a class="<?php if($current_page == $i) echo htmlspecialchars('active'); ?>" 
+            href="akcija_page_controler.php?
+                filter=&
+                items_per_page=<?php echo htmlspecialchars($items_per_page); ?>&
+                price=<?php echo htmlspecialchars($filter_price); ?>&
+                category=<?php echo htmlspecialchars($filter_category); ?>&
+                page=<?php echo htmlspecialchars($i); ?>">
+                    <?php echo htmlspecialchars($i); ?>
+            </a> 
         <?php } ?>
     </div>
 </div>
