@@ -4,18 +4,18 @@
         <div class="form-group">
             <label for="upload">Image</label><br>
             <input type="file" id="upload" name="upload">
-            <small class="err-msg"><?php echo $systemErrors['file_err']; ?></small>
+            <small class="err-msg"><?php echo htmlspecialchars($systemErrors['file_err']); ?></small>
         </div>
         <div class="form-group">
             <label for="title">Title</label><br>
             <input type="title" id="title" name="title" value="<?php echo htmlspecialchars($title) ?>">
-            <small class="err-msg"><?php echo $systemErrors['title_err']; ?></small>
+            <small class="err-msg"><?php echo htmlspecialchars($systemErrors['title_err']); ?></small>
         </div>
 
         <div class="form-group">
             <label for="description">Description</label><br>
             <textarea class="description" type="description" id="description" name="description" rows="4" cols="50"><?php echo htmlspecialchars($description); ?></textarea>
-            <small class="err-msg"><?php echo $systemErrors['description_err']; ?></small>
+            <small class="err-msg"><?php echo htmlspecialchars($systemErrors['description_err']); ?></small>
         </div>
 
         <div class="form-group">

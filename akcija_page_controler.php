@@ -1,34 +1,27 @@
 <?php
 
-// NOTE TO MYSELF: $filter_price is sorting but not by price. It is sorting by id number. THIS IS PRACTICE. CHANGE THAT.
-
 session_start();
-echo $_SESSION['filter_items_per_page'];
+
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Action.php';
 
 $items_per_page = $_SESSION['filter_items_per_page'] ?: 9;;
-$filter_price = $_SESSION['filter_price'] ?: 'desc';
+$filter_added = $_SESSION['filter_added'] ?: 'desc';
 $filter_category = $_SESSION['filter_category'] ?: 'all';
 
 if(!isset($_SESSION['filter_category'])) {
     $_SESSION['filter_category'] = $filter_category;
-    $_SESSION['filter_price'] = $filter_price;
+    $_SESSION['filter_added'] = $filter_added;
     $_SESSION['filter_items_per_page'] = $items_per_page;
 } 
-// else {
-//     $filter_category = $_SESSION['filter_category'];
-//     $filter_price = $_SESSION['filter_price'];
-//     $filter_items_per_page = $_SESSION['filter_items_per_page'];
-// }
 
 if(isset($_GET['filter'])) {
     $filter_category = $_GET['category'];
-    $filter_price = $_GET['price'];
+    $filter_added = $_GET['added'];
     $items_per_page = $_GET['items_per_page'];
     
     $_SESSION['filter_category'] = $filter_category;
-    $_SESSION['filter_price'] = $filter_price;
+    $_SESSION['filter_added'] = $filter_added;
     $_SESSION['filter_items_per_page'] = $items_per_page;
 } 
 
@@ -58,7 +51,6 @@ if(isset($_POST['delete'])) {
     header("Location: http://localhost/workspace/fero_dm_project/update_page_controler.php");
 
 }
-
 // PAGINATION WORK IN PROGRESS...
 $item_start_from = '0';
 // GET TOTAL NUMBER OF ACTION ITEMS IN DATABASE
@@ -82,9 +74,9 @@ $_SESSION['page'] = $current_page;
 
 // get items from database
 if($filter_category == 'all') {
-    $action_items = Action::get_all_action_items($item_start_from, $items_per_page, $filter_price);
+    $action_items = Action::get_all_action_items($item_start_from, $items_per_page, $filter_added);
 } else {
-    $action_items = Action::get_filtered_action_items($item_start_from, $items_per_page, $filter_price, $filter_category);
+    $action_items = Action::get_filtered_action_items($item_start_from, $items_per_page, $filter_added, $filter_category);
 }
 
 $page = 'Action page';

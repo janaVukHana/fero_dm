@@ -65,7 +65,6 @@ class Action extends DB {
      * @return array $rows
      */
     public static function get_all_action_items(string $items_start_from, string $items_per_page, string $order):array {
-
         $sql = "SELECT * FROM `Actions` ORDER BY id $order LIMIT $items_start_from, $items_per_page";
         $pdo = new DB();
         

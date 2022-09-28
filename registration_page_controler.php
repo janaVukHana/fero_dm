@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-// var_dump('fix_error');
-
 require_once __DIR__ . '/models/DB.php';
 require_once __DIR__ . '/models/Users.php';
 require_once __DIR__ . '/models/test_input.php';
@@ -10,12 +8,7 @@ $systemErrors = [];
 $username = $email = $password = "";
 
 // if(isset($_POST['registration'])) {
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // REMINDER FOR MYSELF....
-    // there is other way to check if user pressed form button
-    // I has something to do with $_POST. Will check later.
-    
-    // HERE GOES MY VALIDATIONS PRACTICE ...............
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {.
 
     // INPUT USERNAME: Required + must have 2 or more chars
     if(empty($_POST['username'])) {
@@ -76,8 +69,6 @@ $username = $email = $password = "";
         echo 'User exists';
      }
 }
-
-
 
 require __DIR__ . '/views/_layout/v-header.php';
 

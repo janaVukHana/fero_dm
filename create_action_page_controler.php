@@ -67,8 +67,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 }
 
-
-
 require __DIR__ . '/views/_layout/v-header.php';
 
 require __DIR__ . '/views/v-create_action.php';
