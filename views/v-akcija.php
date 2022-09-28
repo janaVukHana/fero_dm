@@ -82,5 +82,3 @@
         <?php } ?>
     </div>
 </div>
-
-<a href="http://localhost/workspace/fero_dm_project/logout_page_controler.php">Destroy session</a>
