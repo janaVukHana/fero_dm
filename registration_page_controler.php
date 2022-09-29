@@ -8,7 +8,7 @@ $systemErrors = [];
 $username = $email = $password = "";
 
 // if(isset($_POST['registration'])) {
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {.
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // INPUT USERNAME: Required + must have 2 or more chars
     if(empty($_POST['username'])) {

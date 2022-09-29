@@ -4,23 +4,23 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
                         
             <div class="form-group">
-                <label for="category">Category</label>
+                <label for="category">Kategorije</label>
                 <select id="category" name="category">    
-                    <option value="all" <?php if($filter_category == 'all') echo htmlspecialchars('selected'); ?>>All</option>      
+                    <option value="all" <?php if($filter_category == 'all') echo htmlspecialchars('selected'); ?>>Sve kategorije</option>      
                     <option value="ekseri" <?php if($filter_category == 'ekseri') echo htmlspecialchars('selected'); ?>>Ekseri</option>
                     <option value="dvoriste" <?php if($filter_category == 'dvoriste') echo htmlspecialchars('selected'); ?>>Dvoriste</option>
                     <option value="moleraj" <?php if($filter_category == 'moleraj') echo htmlspecialchars('selected'); ?>>Moleraj</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">Dodato</label>
                 <select id="price" name="added">
-                    <option value="asc" <?php if($filter_added == 'asc') echo htmlspecialchars('selected'); ?>>Oldest</option>
-                    <option value="desc" <?php if($filter_added == 'desc') echo htmlspecialchars('selected'); ?>>Newest</option>
+                    <option value="asc" <?php if($filter_added == 'asc') echo htmlspecialchars('selected'); ?>>Najstarije</option>
+                    <option value="desc" <?php if($filter_added == 'desc') echo htmlspecialchars('selected'); ?>>Najnovije</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="items_per_page">Items no.</label>
+                <label for="items_per_page">Prikazi</label>
                 <select id="items_per_page" name="items_per_page">
                     <option value="3" <?php if($items_per_page == '3') echo htmlspecialchars('selected'); ?>>3</option>
                     <option value="5" <?php if($items_per_page == '5') echo htmlspecialchars('selected'); ?>>5</option>
@@ -29,7 +29,7 @@
                 </select>
             </div>    
 
-            <button class="btn" name="filter">Filter</button>
+            <button class="btn" name="filter">Filtriraj</button>
         </form>
     </div>
 <!-- end of filter menu -->
