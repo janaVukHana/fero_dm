@@ -1,7 +1,7 @@
 <section class="box asortiman">
     <div class="box-text">
         <div class="box-content">
-            <h2>Asortiman</h1>
+            <h1>Asortiman</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!
@@ -16,7 +16,7 @@
 <section class="box akcija">
     <div class="box-text">
         <div class="box-content">
-            <h2>Akcija</h1>
+            <h2>Akcija</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!
@@ -31,7 +31,7 @@
 <section class="box projekti">
     <div class="box-text">
         <div class="box-content">
-            <h2>Projekti</h1>
+            <h2>Projekti</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quam facere enim labore aut, commodi totam natus quas magni sit molestias!

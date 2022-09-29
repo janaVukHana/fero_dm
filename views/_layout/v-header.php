@@ -35,7 +35,7 @@
             <nav>
 
                 <div class="logo">
-                    <h1><a href="home_page_controler.php">Fero D&M<br /><span>Gvozdjara</span></a></h1>
+                    <a href="home_page_controler.php">Fero D&M<br /><span>Gvozdjara</span></a>
                 </div>
     
                 <div class="navbar">
