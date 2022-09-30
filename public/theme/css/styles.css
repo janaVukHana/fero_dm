@@ -263,15 +263,47 @@ h2.asortiman-desc {
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* ARTIKLI */
-.artikli ul {
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+
+.artikli ul.asortiman-list {
     margin-top: 2rem;
 }
-.artikli li {
+.artikli li.asortiman-list-item {
     font-size: 1.4rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--dark);
     box-shadow: 0 2px 1px -1px #fff;
-        margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     text-align: left;
     color: var(--light);
 }
