@@ -6,6 +6,20 @@
     --light: #B1D0E0;
   }
 
+  /* :root {
+    --dark: #222831;
+    --main-color: #393E46;
+    --light-color: #FFD369;
+    --light: #EEEEEE;
+  } */
+
+  /* :root {
+    --dark: #222831;
+    --main-color: #393E46;
+    --light-color: #D65A31;
+    --light: #EEEEEE;
+  } */
+
 body {
     font-family: 'Ubuntu', sans-serif;
   }
@@ -50,6 +64,10 @@ a.active {
 img {
     width: 100%;
     vertical-align: middle;
+}
+
+p {
+    color: var(--main-color);
 }
 
 /* utility classes */
@@ -241,6 +259,26 @@ h2.asortiman-desc {
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 1.1rem;
     color: #fff;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ARTIKLI */
+.artikli ul {
+    margin-top: 2rem;
+}
+.artikli li {
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--dark);
+    box-shadow: 0 2px 1px -1px #fff;
+        margin-bottom: 0.5rem;
+    text-align: left;
+    color: var(--light);
+}
+
+.artikli p.secondary-text {
+    font-size: 1.2rem;
+    color: rgb(255, 69, 0);
 }
 
 /* ///////////////////////////////////////////////////////////////////////////// */
