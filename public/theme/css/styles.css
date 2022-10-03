@@ -6,20 +6,6 @@
     --light: #B1D0E0;
   }
 
-  /* :root {
-    --dark: #222831;
-    --main-color: #393E46;
-    --light-color: #FFD369;
-    --light: #EEEEEE;
-  } */
-
-  /* :root {
-    --dark: #222831;
-    --main-color: #393E46;
-    --light-color: #D65A31;
-    --light: #EEEEEE;
-  } */
-
 body {
     font-family: 'Ubuntu', sans-serif;
   }
@@ -48,7 +34,6 @@ h1, h2 {
     font-size: 3.125rem;
     font-weight: 700;
     letter-spacing: 1.4px;
-    /* margin-bottom: 1rem; */
     padding: 0.5rem 0;
     text-align: center;
 }
@@ -94,9 +79,16 @@ p {
 }
 
 .strong {
-    color: var(--dark);
     color: rgb(255, 69, 0);
-    
+}
+
+.secondary-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 0);
+}
+
+.dark-text {
+    color: var(--dark);
 }
 
 
@@ -288,7 +280,7 @@ ul.breadcrumb {
   /* Add a slash symbol (/) before/behind each list item */
   ul.breadcrumb li+li:before {
     padding: 8px;
-    color: black;
+    color: #000;
     content: "/\00a0";
   }
   
@@ -317,11 +309,6 @@ ul.breadcrumb {
     color: var(--light);
 }
 
-.artikli p.secondary-text {
-    font-size: 1.2rem;
-    color: rgb(255, 69, 0);
-}
-
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* ACTION PAGE */
 /* .filter-form {
@@ -345,21 +332,19 @@ ul.breadcrumb {
     align-items: center;
     padding: 2rem;
     text-align: center;
-    /* background-color: green; */
 }
 
 .action-container article {
     width: 25%;
     padding: .5rem;
     margin-bottom: 1rem;
-    /* background-color: red; */
     align-self: flex-end;
     
 }
 
 .price {
     font-size: 1.1rem;
-    color: red;
+    color: rgb(233, 12, 12);
     padding: 0.5rem 0;
     margin-bottom: 0;
 }
@@ -374,29 +359,28 @@ ul.breadcrumb {
 }
 
 .btns-crud {
-    /* background-color: red; */
     display: flex;
     margin-top: 0.5rem;
 }
 
 .btn-del {
-    background-color: red;
-    border-color: red;
+    background-color: rgb(233, 12, 12);
+    border-color: rgb(233, 12, 12)d;
 }
 
 .btn-del:hover {
-    color: red;
+    color: rgb(233, 12, 12);
     background-color: #fff;
     border-color: #fff;
 }
 
 .btn-upd {
-    background-color: green;
-    border-color: green;
+    background-color: rgb(0, 128, 0);
+    border-color: rgb(0, 128, 0);
 }
 
 .btn-upd:hover {
-    color: green;
+    color: rgb(0, 128, 0);
     background-color: #fff;
     border-color: #fff;
 }
@@ -412,7 +396,7 @@ ul.breadcrumb {
   }
   
   .pagination a {
-    color: black;
+    color: #000;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
@@ -420,7 +404,7 @@ ul.breadcrumb {
   
   .pagination a.active {
     background-color: #4CAF50;
-    color: white;
+    color: #fff;
     border-radius: 5px;
   }
   
@@ -464,7 +448,7 @@ form {
 }
 
 .err-msg {
-    color: red;
+    color: rgb(233, 12, 12);
 }
 
 /* ///////////////////////////////////////////////////////////////////////////// */
