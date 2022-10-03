@@ -93,6 +93,11 @@ p {
     border-color: #fff;
 }
 
+.strong {
+    color: var(--dark);
+    color: rgb(255, 69, 0);
+    
+}
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -216,6 +221,10 @@ main {
 .box p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+}
+
+.box:first-child p {
+    color: var(--light);
 }
 
 .box-text, .box-slika {
