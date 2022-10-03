@@ -6,7 +6,7 @@
                 <div class="footer-links">
                     <h3>Navigacija</h3>
                     <ul>
-                        <li><a href="home_page_controler.php">Pocetna</a></li>
+                        <li><a href="home_page_controler.php">Početna</a></li>
                         <li><a href="asortiman_page_controler.php">Asortiman</a></li>
                         <li><a href="akcija_page_controler.php">Akcija</a></li>
                         <li><a href="#">Projekti</a></li>
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h3>Drustvene mreze</h3>
+                    <h3>Društvene mreže</h3>
                     <ul>
                         <li><a href="#"><span class="social-icon"><i class="fa-brands fa-facebook"></i></span>Facebook</a></li>
                         <li><a href="#"><span class="social-icon"><i class="fa-brands fa-instagram"></i></span>Instagram</a></li>

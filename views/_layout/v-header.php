@@ -35,12 +35,12 @@
             <nav>
 
                 <div class="logo">
-                    <a href="home_page_controler.php">Fero D&M<br /><span>Gvozdjara</span></a>
+                    <a href="home_page_controler.php">Fero D&M<br /><span>Gvožđara</span></a>
                 </div>
     
                 <div class="navbar">
                     <ul class="navbar-menu">
-                        <li><a class="<?php if($page == 'Home page') echo htmlspecialchars('active'); ?>" href="home_page_controler.php">Pocetna</a></li>
+                        <li><a class="<?php if($page == 'Home page') echo htmlspecialchars('active'); ?>" href="home_page_controler.php">Početna</a></li>
                         <li><a class="<?php if($page == 'Asortiman page') echo htmlspecialchars('active'); ?>" href="asortiman_page_controler.php">Asortiman</a></li>
                         <li><a class="<?php if($page == 'Action page') echo htmlspecialchars('active') ?>" href="akcija_page_controler.php">Akcija</a></li>
                         <li><a href="#">Projekti</a></li>
