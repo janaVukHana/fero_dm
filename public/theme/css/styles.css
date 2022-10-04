@@ -20,9 +20,7 @@ h1 {
     color: #fff;font-size: 3.125rem;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   line-height: 1.2;
 }
 
@@ -64,6 +62,7 @@ p {
     padding: 0.5rem 1rem;
     border: 1px solid var(--dark);
     border-radius: 12px;
+    margin-bottom: 0.3rem;
     transition: .3s ease-in-out;
 }
 
@@ -83,14 +82,14 @@ p {
 }
 
 .secondary-text {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 1);
     color: rgb(255, 255, 0);
+    border-radius: 4px;
 }
 
 .dark-text {
     color: var(--dark);
 }
-
 
 /* ////////////////////////////////////////////////////////////////////// */
 /* NAVIGATION */
@@ -182,9 +181,6 @@ button.mobile-menu-icon:hover .line {
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// */
-main {
-    padding: 3rem 0;
-}
 /* HOME PAGE */
 
 /* main content styles */
@@ -236,10 +232,6 @@ main {
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* ASORTIMAN PAGE */
 
-/* ASORTIMAN page treba da bude slicna kao ACTION PAGE. 
-   Razlika je u velicini fonta, poziciji desc i izacivanju h2 a ostanku desc ili obratno.
-*/
-
 .action-container .asortiman {
     background-color: var(--dark);
     align-self: stretch;
@@ -269,32 +261,32 @@ ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
     background-color: #eee;
-  }
-  
-  /* Display list items side by side */
-  ul.breadcrumb li {
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
     display: inline;
     font-size: 18px;
-  }
-  
-  /* Add a slash symbol (/) before/behind each list item */
-  ul.breadcrumb li+li:before {
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
     padding: 8px;
     color: #000;
     content: "/\00a0";
-  }
-  
-  /* Add a color to all links inside the list */
-  ul.breadcrumb li a {
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
-  }
-  
-  /* Add a color on mouse-over */
-  ul.breadcrumb li a:hover {
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
-  }
+}
 
 .artikli ul.asortiman-list {
     margin-top: 2rem;
@@ -311,9 +303,6 @@ ul.breadcrumb {
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* ACTION PAGE */
-/* .filter-form {
-    padding-top: 2rem;
-} */
 
 .filter-form form {
     display: flex;
@@ -338,8 +327,7 @@ ul.breadcrumb {
     width: 25%;
     padding: .5rem;
     margin-bottom: 1rem;
-    align-self: flex-end;
-    
+    align-self: flex-end;  
 }
 
 .price {
@@ -393,25 +381,53 @@ ul.breadcrumb {
 
 .pagination {
     display: inline-block;
-  }
+}
   
-  .pagination a {
+.pagination a {
     color: #000;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
-  }
-  
-  .pagination a.active {
+}
+
+.pagination a.active {
     background-color: #4CAF50;
     color: #fff;
     border-radius: 5px;
-  }
-  
-  .pagination a:hover:not(.active) {
+}
+
+.pagination a:hover:not(.active) {
     background-color: #ddd;
     border-radius: 5px;
-  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* O NAMA PAGE */
+.features {
+    margin: 1rem 4rem;
+}
+
+.features-content {
+    flex: 1; 
+    padding: 0 1rem; 
+    background-color: var(--dark);
+}
+
+.features-content:nth-child(2) {
+    background-color: var(--main-color);
+}
+
+.features-content:nth-child(3) {
+    background-color: var(--light-color);
+}
+
+.features-icon {
+    font-size: 7rem;
+}
+
+.features-icon, .features h2, .features p {
+    color: #fff;
+}
 
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* LOGIN PAGE */
@@ -610,7 +626,6 @@ footer {
         padding: 1.5rem 1.5rem;
     }
 
-    
     .box p {
         font-size: 1.3rem;
         margin-bottom: 1rem;
@@ -720,7 +735,6 @@ footer {
         width: 360px;
         height: 300px;
     }
-    
 }
 
 @media only screen and (max-width: 600px) {
@@ -733,6 +747,10 @@ footer {
         max-width: 320px;
     }
 
+    .features {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 
